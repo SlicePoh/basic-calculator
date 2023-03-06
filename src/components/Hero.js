@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
 export default function Hero() {
-
+    // function percentage(num){
+    //     return (num/100);
+    // }
     const [result, setResult] = useState("");
 
     const handleClick = (o) => {
@@ -12,6 +14,9 @@ export default function Hero() {
     }
     const backspace=()=>{
         setResult(result.slice(0,-1));
+    }
+    const percent=()=>{
+        setResult(result/100);
     }
     const calculate=()=>{
         try{
@@ -47,6 +52,7 @@ export default function Hero() {
                 <button type="submit" name="0" onClick={handleClick} className=" bg-slate-600 hover:bg-slate-400 h-10 m-1 w-16 rounded-md   ">0</button>
                 <button type="submit" name="." onClick={handleClick} className=" bg-slate-600 hover:bg-slate-400 h-10 m-1 w-16 rounded-md   ">.</button>
                 <button type="submit" onClick={calculate } className=" bg-pink-500 hover:bg-pink-700 text-black m-1 rounded-md  " id="equal">=</button>
+                <button type="submit" name="%" onClick={percent} className=" bg-indigo-800 hover:bg-indigo-600 h-10 m-1 w-16 rounded-md ">%</button>
             </div>
         </div>
     )
